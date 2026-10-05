@@ -4,34 +4,56 @@ import java.util.Scanner;
 public class Pertemuan_3 {
 
     public static void main(String[] args) {
+       
         Scanner inp = new Scanner (System.in);
-        double p,l,L;
+        String index;
+        System.out.println("=============================================");
+        System.out.println("                  HITUNG BMI               ");
+        System.out.println("=============================================");
+        System.out.print("Masukkan Nama Lengkap   :   ");
+        String nama = inp.nextLine();
+        System.out.print("Masukkan Berat (kg)     :   ");
+        Double berat = inp.nextDouble();
+        System.out.print("Masukkan Tinggi (cm)    :   ");
+        Double tinggi = inp.nextDouble();
+        System.out.println("============================================");
+        System.out.println("                    HASIL                   ");
+        System.out.println("============================================");
         
-        System.out.println("Perhitungan Persegi Panjang");
-        System.out.print("Masukkan Nilai Panjang  : ");
-        p = inp.nextDouble();
-        System.out.print("Masukkan Nilai Lebar    : ");
-        l = inp.nextDouble();
-        System.out.println("Menghitung Luas..........");
+        String a="Nihayatul Karomah";
+        double b=38;
+        double c=142;
+        double d=1.42;
+        double bmi=b/(d*d);
+        double ideal=25*(d*d);
         
-        if (p!=0 && l!=0){
-            L= p*l;
-            System.out.println("Menampilkan Luas");
-            System.out.println("Luas Persegi Panjang    :   "+ String.format("%.2f",L));
+        if (bmi<18.5){
+            index = "underweight";
         }
-        else if (p==0){
-            System.out.println("Gagal Menghitung");
-            System.out.println("Masukkan Nilai Panjang yang Benar");
+        else if (bmi<=18.5 && bmi<25){
+            index = "normal";
         }
-        else if (l==0){
-            System.out.println("Gagal Menghitung");
-            System.out.println("Masukkan Nilai Lebar yang Benar");
+        else if (bmi<=25 && bmi<30){
+            index = "overweight";
         }
-        else{
-            System.out.println("Gagal Menghitung");
-            System.out.println("Masukkan Nilai Panjang dan Lebar yang Benar");
-            
+        else if (bmi<=30 && bmi<40){
+            index = "obese";
         }
+        else if (bmi>=40){
+            index = "over obese";
+        }
+        
+        System.out.println("Nama Lengkap  :   " +a);
+        System.out.println("Berat Badan   :   " +b +" kg");
+        System.out.println("Tinggi Badan  :   " +c +" cm");
+        System.out.println("BMI           :   " +bmi);
+        System.out.println("Berat Ideal   :   " +ideal +" kg");
+        System.out.println("Selisih       :   " +(b-ideal) +" kg");
+        System.out.println("============================================");
+        
+                
+       
+        
         
     }
     
